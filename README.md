@@ -44,13 +44,11 @@ Deploy direto deste repositório: **Cloudflare Dashboard → Workers & Pages →
 
 ---
 
-## 📊 Status do CI/CD (GitHub Actions)
+## 📊 Status do CI/CD
 
-| Job | Status |
-| :--- | :--- |
-| Qualidade do código | ✅ Sucesso |
-| Análise estática (CodeQL) | ✅ Sucesso |
-| Vazamento de credenciais | ✅ Sucesso |
+[![CI](https://github.com/vitorsavicki/jogo-da-forca/actions/workflows/ci.yml/badge.svg)](https://github.com/vitorsavicki/jogo-da-forca/actions/workflows/ci.yml)
+[![CodeQL](https://github.com/vitorsavicki/jogo-da-forca/actions/workflows/codeql.yml/badge.svg)](https://github.com/vitorsavicki/jogo-da-forca/actions/workflows/codeql.yml)
+[![Gitleaks](https://github.com/vitorsavicki/jogo-da-forca/actions/workflows/gitleaks.yml/badge.svg)](https://github.com/vitorsavicki/jogo-da-forca/actions/workflows/gitleaks.yml)
 
 ---
 
