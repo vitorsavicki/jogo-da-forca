@@ -40,7 +40,7 @@
 
     <p id="dicas" class="dicas">Erros: <span id="erros">0</span>/6 · Dica: <span id="dica">—</span></p>
 
-    <div id="teclado" class="teclado" aria-label="Teclado de letras"></div>
+    <div id="teclado" class="teclado" aria-label="Teclado de letras" role="group"></div>
 
     <div class="acoes">
       <button id="btn-dica" type="button">💡 Dica (1x)</button>
@@ -49,7 +49,7 @@
 
     <div id="overlay" class="overlay" hidden>
       <div class="modal" role="alertdialog" aria-labelledby="overlay-titulo">
-        <h2 id="overlay-titulo"></h2>
+        <h2 id="overlay-titulo">Resultado</h2>
         <p id="overlay-texto"></p>
         <button id="btn-overlay" type="button">Jogar de novo</button>
       </div>
