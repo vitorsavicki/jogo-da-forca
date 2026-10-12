@@ -44,4 +44,14 @@ Deploy direto deste repositório: **Cloudflare Dashboard → Workers & Pages →
 
 ---
 
+## 📊 Status do CI/CD (GitHub Actions)
+
+| Job | Status |
+| :--- | :--- |
+| Qualidade do código | ✅ Sucesso |
+| Análise estática (CodeQL) | ✅ Sucesso |
+| Vazamento de credenciais | ✅ Sucesso |
+
+---
+
 Feito com 💜 por Vitor Savicki, com ajuda de Zeta (Letta Code) — usando Claude Code grátis via OmniRoute.
