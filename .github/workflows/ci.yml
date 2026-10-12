@@ -1,0 +1,41 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  qualidade:
+    name: Qualidade do código
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Sintaxe JavaScript (node --check)
+        run: |
+          set -e
+          for f in js/*.js; do
+            echo "Verificando $f"
+            node --check "$f"
+          done
+
+      - name: Arquivos obrigatórios presentes
+        run: |
+          set -e
+          for f in index.html css/style.css js/game.js js/words.js _headers README.md LICENSE; do
+            test -f "$f" || { echo "FALTANDO: $f"; exit 1; }
+          done
+          echo "Todos os arquivos presentes."
+
+      - name: Validação HTML (informativa)
+        continue-on-error: true
+        run: npx --yes html-validate@8 index.html
