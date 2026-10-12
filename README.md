@@ -1,5 +1,7 @@
 # 🎯 Jogo da Forca
 
+**🌐 Jogue agora: [jogo-da-forca.vitorsavicki.workers.dev](https://jogo-da-forca.vitorsavicki.workers.dev/)** — deploy automático a cada push!
+
 O clássico jogo da forca em **HTML + CSS + JavaScript puros** — sem frameworks, sem build, sem dependências.
 
 ## ✨ Recursos
@@ -14,7 +16,7 @@ O clássico jogo da forca em **HTML + CSS + JavaScript puros** — sem framework
 
 ## 🔒 Segurança (boas práticas aplicadas)
 
-- **CSP estrita** via `_headers` do Cloudflare Pages: `default-src 'self'`, sem scripts inline, sem conexões externas
+- **CSP estrita** via `_headers` servido pelo Cloudflare Worker: `default-src 'self'`, sem scripts inline, sem conexões externas
 - **Zero dependências**: nada de npm/CDN → sem supply-chain risk
 - `X-Content-Type-Options: nosniff`, `X-Frame-Options: DENY`, `Referrer-Policy: no-referrer`, `Permissions-Policy` mínima
 - Apenas assets estáticos locais
@@ -27,9 +29,10 @@ O clássico jogo da forca em **HTML + CSS + JavaScript puros** — sem framework
 npx serve .        # ou: python -m http.server
 ```
 
-## ☁️ Deploy (Cloudflare Pages)
+## ☁️ Deploy (Cloudflare Workers)
 
-Deploy direto deste repositório: **Cloudflare Dashboard → Workers & Pages → Create → Pages → Connect to Git** → selecione este repo → framework "None", build command vazio, output `/`. O arquivo `_headers` é aplicado automaticamente.
+Hospedado como **Worker de assets estáticos** na Cloudflare, com **deploy automático** a cada push na `main` (Workers Builds).
+O passo a passo completo — do zero, com diagramas — está no [**DEPLOY.md**](DEPLOY.md).
 
 ## 🛠️ Estrutura
 
