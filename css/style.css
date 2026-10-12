@@ -40,3 +40,6 @@ h1 { margin: 8px 0 4px; font-size: 1.8rem; }
 .modal { background: var(--panel); padding: 28px 32px; border-radius: 16px; max-width: 340px; }
 .modal h2 { margin-top: 0; }
 @media (max-width: 480px) { .teclado { grid-template-columns: repeat(7, 1fr); } .palavra { font-size: 1.5rem; } }
+
+/* O atributo hidden precisa vencer o display:flex do overlay */
+.overlay[hidden] { display: none; }
