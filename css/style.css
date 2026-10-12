@@ -1,0 +1,42 @@
+:root {
+  --bg: #0f172a; --panel: #1e293b; --texto: #e2e8f0; --suave: #94a3b8;
+  --acento: #22d3ee; --ok: #4ade80; --erro: #f87171;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; min-height: 100vh; display: flex; justify-content: center;
+  background: var(--bg); color: var(--texto);
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+.container { max-width: 560px; width: 100%; padding: 16px; text-align: center; }
+h1 { margin: 8px 0 4px; font-size: 1.8rem; }
+.categoria { color: var(--suave); margin: 0 0 8px; }
+.placar { display: flex; justify-content: center; gap: 24px; color: var(--suave); font-size: .95rem; }
+#forca { margin: 12px auto; display: block; background: var(--panel); border-radius: 12px; }
+#forca .base { stroke: var(--suave); stroke-width: 4; stroke-linecap: round; }
+#forca .parte { stroke: var(--texto); stroke-width: 4; stroke-linecap: round; fill: none; visibility: hidden; }
+#forca .parte.visivel { visibility: visible; }
+.palavra { font-size: 2rem; letter-spacing: .35em; margin: 12px 0; font-weight: 700; min-height: 2.6rem; }
+.dicas { color: var(--suave); margin: 4px 0 12px; }
+.teclado { display: grid; grid-template-columns: repeat(10, 1fr); gap: 6px; margin-bottom: 14px; }
+.teclado button {
+  padding: 10px 0; font-size: 1rem; font-weight: 600; border: 0; border-radius: 8px;
+  background: var(--panel); color: var(--texto); cursor: pointer; transition: transform .05s;
+}
+.teclado button:hover:not(:disabled) { background: var(--acento); color: #082f38; }
+.teclado button:disabled { opacity: .35; cursor: default; }
+.teclado button.certa { background: var(--ok); color: #052e16; opacity: 1; }
+.teclado button.errada { background: var(--erro); color: #450a0a; opacity: 1; }
+.acoes { display: flex; gap: 10px; justify-content: center; }
+.acoes button, .modal button {
+  padding: 10px 18px; border: 0; border-radius: 10px; font-size: 1rem; cursor: pointer;
+  background: var(--acento); color: #082f38; font-weight: 700;
+}
+.acoes button:disabled { opacity: .4; cursor: default; }
+.overlay {
+  position: fixed; inset: 0; background: #0f172acc; display: flex;
+  align-items: center; justify-content: center; padding: 16px;
+}
+.modal { background: var(--panel); padding: 28px 32px; border-radius: 16px; max-width: 340px; }
+.modal h2 { margin-top: 0; }
+@media (max-width: 480px) { .teclado { grid-template-columns: repeat(7, 1fr); } .palavra { font-size: 1.5rem; } }

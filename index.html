@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Jogo da Forca — clássico jogo de adivinhar palavras, feito com HTML, CSS e JavaScript puros.">
+  <title>Jogo da Forca</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/words.js" defer></script>
+  <script src="js/game.js" defer></script>
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>🎯 Jogo da Forca</h1>
+      <p class="categoria">Categoria: <strong id="categoria">—</strong></p>
+    </header>
+
+    <div class="placar" role="status">
+      <span id="vitorias">Vitórias: 0</span>
+      <span id="derrotas">Derrotas: 0</span>
+    </div>
+
+    <svg id="forca" viewBox="0 0 200 250" width="200" height="250" aria-label="Desenho da forca" role="img">
+      <!-- estrutura -->
+      <line x1="20" y1="240" x2="180" y2="240" class="base"/>
+      <line x1="50" y1="240" x2="50" y2="20"  class="base"/>
+      <line x1="50" y1="20"  x2="140" y2="20" class="base"/>
+      <line x1="140" y1="20" x2="140" y2="50" class="base"/>
+      <!-- boneco: partes reveladas a cada erro -->
+      <circle cx="140" cy="65" r="15" class="parte" id="p0"/>
+      <line x1="140" y1="80"  x2="140" y2="140" class="parte" id="p1"/>
+      <line x1="140" y1="95"  x2="115" y2="120" class="parte" id="p2"/>
+      <line x1="140" y1="95"  x2="165" y2="120" class="parte" id="p3"/>
+      <line x1="140" y1="140" x2="118" y2="180" class="parte" id="p4"/>
+      <line x1="140" y1="140" x2="162" y2="180" class="parte" id="p5"/>
+    </svg>
+
+    <p id="palavra" class="palavra" aria-live="polite">_ _ _ _ _</p>
+
+    <p id="dicas" class="dicas">Erros: <span id="erros">0</span>/6 · Dica: <span id="dica">—</span></p>
+
+    <div id="teclado" class="teclado" aria-label="Teclado de letras"></div>
+
+    <div class="acoes">
+      <button id="btn-dica" type="button">💡 Dica (1x)</button>
+      <button id="btn-novo" type="button">🔄 Novo jogo</button>
+    </div>
+
+    <div id="overlay" class="overlay" hidden>
+      <div class="modal" role="alertdialog" aria-labelledby="overlay-titulo">
+        <h2 id="overlay-titulo"></h2>
+        <p id="overlay-texto"></p>
+        <button id="btn-overlay" type="button">Jogar de novo</button>
+      </div>
+    </div>
+  </main>
+  <noscript>Este jogo precisa de JavaScript habilitado.</noscript>
+</body>
+</html>
